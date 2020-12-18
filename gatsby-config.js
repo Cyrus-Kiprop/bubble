@@ -7,6 +7,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-fontawesome-css`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -33,6 +34,7 @@ module.exports = {
       options: {
         fonts: [
           `fira code\:300,400,500,600.700`,
+          `poppins\:200, 300, 400, 500, 600, 700`,
           `cambay\:400,700`,
           `arvo\:400,700`,
           `ubuntu mono\:400,700`,
