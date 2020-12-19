@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
+import bgImage from "../images/bg-one.jpg"
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
@@ -31,6 +32,7 @@ const Image = () => {
   }
 
   return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  // return <Img fluid={bgImage} />
 }
 
 export default Image

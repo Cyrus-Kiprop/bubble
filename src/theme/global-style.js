@@ -11,6 +11,7 @@ export const theme = {
     serif: "Arvo, sans",
     fira: "Fira Code, san-serif",
     monospace: '"Ubuntu Mono", monospace',
+    poppins: "Poppins, san-serif",
   },
 
   fontSize: {
@@ -205,10 +206,10 @@ html {
     --webkit-box-sizing: border-box;
     --moz-box-sizing: border-box;
     scroll-behavior: smooth;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-family: ${({ theme }) => theme.font.fira};
-    font-size: ${({ theme }) => theme.fontSize.lg};
+    font-family: ${({ theme }) => theme.font.poppins};
     color: ${({ theme }) => theme.colours.gray[900]};
+     --scrollbarBG: #CFD8DC;
+  --thumbBG: #90A4AE;
 
 }
 
@@ -216,9 +217,38 @@ html {
     box-sizing: inherit;
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+
 body {
     line-height: ${({ theme }) => theme.lineHeight.relaxed};
     letter-spacing: ${({ theme }) => theme.letterSpacing.wide};
     background-color: ${({ theme }) => theme.colours.white};
+}
+
+body , p {
+  font-family: "Poppins", Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.75em;
+    color: #d5d5d5;
 }
 `

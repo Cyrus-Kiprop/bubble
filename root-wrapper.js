@@ -14,8 +14,9 @@ export const WrapRootElement = ({ element }) => {
   )
 }
 
-export const onInitialClientRender = () => {
-  setTimeout(function () {
-    document.getElementById("___loader").style.display = "none"
-  }, 1000)
-}
+// export const onInitialClientRender = () => {
+//   console.log("this is the setimoute functionworking")
+//   setTimeout(function () {
+//     document.getElementById("___loader").style.display = "none"
+//   }, 1000)
+// }

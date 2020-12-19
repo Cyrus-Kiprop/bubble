@@ -1,25 +1,15 @@
+import { faHome } from "@fortawesome/free-solid-svg-icons"
 import React from "react"
-import { Link } from "gatsby"
-
+import HeroSection from "../components/HeroSection"
+import Homepage from "../components/Homepage"
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
-import { H1, P } from "../components/page-elements"
 
-const IndexPage = () => (
-  // <Layout>
-  <>
-    <SEO title="Home" />
-    <H1>Hi people</H1>
-    <P>Welcome to your new Gatsby site.</P>
-    <P>Now go build something great.</P>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    {/* </Layout> */}
-  </>
-)
-
-export default IndexPage
+export default function indexPage() {
+  return (
+    <>
+      <SEO title="Home" />
+      <Homepage />
+    </>
+  )
+}
