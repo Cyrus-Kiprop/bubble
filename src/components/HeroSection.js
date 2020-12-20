@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import Particle from "./particle"
+
+import myImage from "../images/my-image.jpg"
 import Row from "./shared/Row"
 
 export default function HeroSection() {
@@ -137,7 +139,6 @@ const HeroWrapper = styled.div`
   }
 
   .hp-inner {
-    background-image: url(../images/linked-in.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -149,7 +150,9 @@ const HeroWrapper = styled.div`
     bottom: -1px;
     left: -1px;
     right: -1px;
-    background-image: url(//lmpixels.com/wp/leven-wp/wp-content/uploads/2019/12/cesar-rincon-1024x1024.jpg);
+    background-image: url(${myImage});
+    background-position: 100% 0%;
+    /* background-image: url(//lmpixels.com/wp/leven-wp/wp-content/uploads/2019/12/cesar-rincon-1024x1024.jpg); */
     border-radius: 1500px;
   }
 
