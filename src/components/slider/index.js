@@ -1,14 +1,32 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
+import Arrow from "./Arrow.js"
 
-export default function Slider() {
-  return <SliderWrapper></SliderWrapper>
+import SlideContent from "./SlideContent.js"
+
+export default function Slides() {
+  const getWidth = () => window.innerWidth
+
+  const [state] = useState({
+    translate: 0,
+    transition: 0.45,
+  })
+
+  const { transition, translate } = state
+
+  return (
+    <SliderWrapper>
+      <SlideContent
+        translate={translate}
+        transition={transition}
+        width={getWidth()}
+      />
+      <Arrow />
+    </SliderWrapper>
+  )
 }
 
 const SliderWrapper = styled.div`
-  height: 200px;
   position: relative;
-  width: 50vw;
   margin: 0 auto;
-  overflow: hidden;
 `
