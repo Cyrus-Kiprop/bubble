@@ -4,7 +4,7 @@ import Arrow from "./Arrow.js"
 
 import SlideContent from "./SlideContent.js"
 
-export default function Slides() {
+export default function Slides({ children }) {
   const getWidth = () => window.innerWidth
 
   const [state] = useState({
@@ -20,7 +20,10 @@ export default function Slides() {
         translate={translate}
         transition={transition}
         width={getWidth()}
-      />
+      >
+        {children}
+      </SlideContent>
+
       <Arrow />
     </SliderWrapper>
   )

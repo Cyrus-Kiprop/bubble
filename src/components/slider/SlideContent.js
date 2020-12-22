@@ -2,7 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import { PropTypes } from "prop-types"
 
-export default function SlideContent({ translate, transition, width }) {
+export default function SlideContent({
+  translate,
+  transition,
+  width,
+  children,
+}) {
   return (
     <SliderWrapper id="slides-container">
       <div class="testimonial-item testimonial-testimonials-5fdc48502728d">
