@@ -26,4 +26,9 @@ const FooterWrapper = styled.div`
         border-bottom-left-radius: 40px;
         border-bottom-right-radius: 40px;
     }
+    
+    @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    }
 `
