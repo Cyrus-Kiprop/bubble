@@ -7,6 +7,7 @@ import HeroSection from "../components/HeroSection"
 import FunFacts from "./fun-facts"
 import Testimonials from "./Testimonials"
 import Footer from "./footer";
+import Contact from "./contacts";
 
 const Homepage = ({ children }) => (
   <main>
@@ -14,6 +15,7 @@ const Homepage = ({ children }) => (
     <Services/>
     <Testimonials />
     <FunFacts />
+    <Contact/>
     <Footer/>
   </main>
 )
