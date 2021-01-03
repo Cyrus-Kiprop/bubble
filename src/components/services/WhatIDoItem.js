@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components'
+import Animate from "../animation";
 
 
 WhatIDoItem.propTypes = {
@@ -12,21 +13,24 @@ WhatIDoItem.propTypes = {
 function WhatIDoItem(props) {
     const {heading, body, imgUrl} = props
     return (
-        <ItemWrapper>
-            <div className="info-block-w-icon">
-                <div className="ci-icon">
-                    < img src={imgUrl} alt={heading}/>
+        <Animate>
+            <ItemWrapper>
+                <div
+                    className="info-block-w-icon">
+                    <div className="ci-icon">
+                        < img src={imgUrl} alt={heading}/>
+                    </div>
+                    <div className="ci-text">
+                        <h4>{heading}</h4>
+                        <p>
+                            {
+                                body
+                            }
+                        </p>
+                    </div>
                 </div>
-                <div className="ci-text">
-                    <h4>{heading}</h4>
-                    <p>
-                        {
-                            body
-                        }
-                    </p>
-                </div>
-            </div>
-        </ItemWrapper>
+            </ItemWrapper>
+        </Animate>
     );
 }
 
