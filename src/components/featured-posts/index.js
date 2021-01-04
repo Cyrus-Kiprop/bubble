@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import Row from '../shared/Row';
 import CenterTitle from '../shared/CenterTitle';
-import artImg from '../../images/b-3.png';
 import Section from '../page-elements/section';
 
-FeaturedPosts.propTypes = {
-
-};
-
-function FeaturedPosts(props) {
+function FeaturedPosts() {
   const [articles] = useState([
     {
       imgSrc: 'https://miro.medium.com/max/1000/0*LgWPaDxVRmD1fY4B',
@@ -18,29 +12,33 @@ function FeaturedPosts(props) {
       postedOn: '05,12,2019',
       shortDescription: ' By default, current browsers treat every HTML element as a block element. However, CSS has a different cocktail recipe for displaying elements on the DOM:- the — inline, and block. However, there is a third smoothy called the inline-block.',
       slug: 'Cracking the CSS display',
-
+      delay: '300',
+      duration: '800',
     }, {
       imgSrc: 'https://firebasestorage.googleapis.com/v0/b/hackernoon-app.appspot.com/o/images%2FMJpFVUEItkSdoh38rYo60VT7RfH3-dxq4x96.jpeg?alt=media&token=90a6b406-5988-40eb-91fa-3bc4ece5404b',
       articleLink: 'https://www.hackernoon.com/ruby-on-rails-hidden-secrets-how-to-get-the-most-out-of-active-record-associations-6m133w8a',
       postedOn: '13.10.2020',
       shortDescription: 'I struggled a lot with Rails models as a beginner. I spent a lot of time reading the docs, read a couple of medium articles, watched some youtube videos but all in vain',
       slug: 'Ruby on Rails Hidden Secrets: Active Records Associations',
+      delay: '500',
+      duration: '800',
     },
   ]);
   return (
     <Section>
-
       <CenterTitle title="Featured Posts" />
       <Row>
         {
               articles.map((article) => (
                 <div className="col-sm-12 col-md-4">
-
-                  <Posts>
+                  <Posts
+                    data-sal="slide-up"
+                    data-sal-delay={article.delay}
+                    data-sal-easing="ease"
+                    data-sal-duration="800"
+                  >
                     <div
                       className="mh-blog-item dark-bg wow fadeInUp"
-                      data-wow-duration="0.8s"
-                      data-wow-delay="0.3s"
                     >
                       <img src={article.imgSrc} alt="" className="img-fluid" />
                       <div className="blog-inner">
