@@ -1,9 +1,18 @@
 import React from "react"
 import styled from "styled-components"
+import Animate from "../animation";
+
+
 
 export default function SectionTitle({ title }) {
   return (
-    <div className=" col-xs-12 col-sm-12 ">
+
+    <div
+        data-sal="slide-up"
+        data-sal-delay="300"
+        data-sal-easing="ease"
+        data-sal-duration="800"
+        className=" col-xs-12 col-sm-12 ">
       <TitleWrapper>
         <div
           id=""
