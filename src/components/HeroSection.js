@@ -1,9 +1,10 @@
-import React from "react"
-import styled from "styled-components"
-import Particle from "./particle"
+import React from 'react';
+import styled from 'styled-components';
+import Typewriter from 'typewriter-effect';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
-import myImage from "../images/my-image.jpg"
-import Row from "./shared/Row"
+import myImage from '../images/my-image.jpg';
+import Row from './shared/Row';
 
 export default function HeroSection() {
   return (
@@ -13,35 +14,65 @@ export default function HeroSection() {
           <Row>
             <div className="col-12 col-md-5">
               <div className="home-photo">
-                <div className="hp-inner"></div>
+                <div className="hp-inner" />
               </div>
             </div>
             <div className="col-12 col-md-7">
               <div className="welcome-content">
                 <div className="proffession">
-                  <h4 className="text-center">Front-end Engineer</h4>
-                  {/* <h4>Back-end Engineer</h4> */}
-                  {/* <h4>Full-stack Developer</h4> */}
+                  <Typewriter
+                    options={{
+                      autoStart: true,
+                      loop: true,
+                    }}
+                    onInit={(typewriter) => {
+                      typewriter
+                        .typeString('Front-End Engineer')
+                        .pauseFor(1000)
+                        .deleteAll()
+                        .typeString('Back-End Engineer')
+                        .pauseFor(1000)
+                        .deleteAll()
+                        .typeString('Full-Stack Engineer...')
+                        .pauseFor(1000)
+                        .deleteAll()
+                        .start();
+                    }}
+                  />
                 </div>
-                <h1>Cyrus Kiprop</h1>
+                <h1>Hi I'm Cyrus Kiprop</h1>
                 <p>
-                  Fusce tempor magna mi, non egestas velit ultricies nec. Aenean
-                  convallis, risus non condimentum gravida, odio mauris
-                  ullamcorper felis, ut venenatis purus ex eu mi. Quisque
-                  imperdiet lacinia urna, a placerat sapien pretium eu.
+                  <span style={{ fontSize: '16px', fontWeight: 500 }}>
+                    I am full-stack web developer currently working as a freelancer, based in Nairobi, Kenya. I Recently graduated from Microverse. Currently working from home.
+                    <br />
+                    <br />
+                    My stack is Ruby, Ruby on Rails, Node, Express, JavaScript(ES6+), Gatsby, React/Redux, SQL and NO-SQL DBs.
+                  </span>
+                  <br />
+                  <br />
+                  I’m a second career dev, that reskilled from a academic writing role into software development.
+                  <br />
+                  <br />
+                  <span style={{ fontSize: '16px', fontWeight: 600 }}>
+                    When not coding or working on a project!,
+                    <br />
+                  </span>
+                  I love hiking and hanging out with friends. I am a pro at Ping Pong and
+                  I enjoy feeding baby elephants on Tuesdays and Sundays.
+
                 </p>
-                <div class="home-buttons">
+                <div className="home-buttons">
                   <a
-                    href="https://themeforest.net/item/leven-vcard-wordpress-theme/25289671"
+                    href="https://docs.google.com/document/d/1B1Of9h6KMu6WUZ2k6BgztHJ140Xb1LeVoXTpGC3UNa4/edit?usp=sharing"
                     target="_blank"
-                    class="btn btn-primary btn-cv"
+                    className="btn btn-primary btn-cv"
                   >
                     Download CV
                   </a>
                   <a
-                    href="https://lmpixels.com/wp/leven-wp/contact/"
+                    onClick={() => scrollTo('#contacts')}
                     target="_self"
-                    class="btn btn-secondary btn-contact"
+                    className="btn btn-secondary btn-contact"
                   >
                     Contact
                   </a>
@@ -51,9 +82,8 @@ export default function HeroSection() {
           </Row>
         </div>
       </div>
-      {/* <Particle></Particle> */}
     </HeroWrapper>
-  )
+  );
 }
 
 const HeroWrapper = styled.div`
@@ -205,4 +235,4 @@ const HeroWrapper = styled.div`
   .home-buttons > .btn-contact {
     border-color: #d5d5d5;
   }
-`
+`;
