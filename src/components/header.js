@@ -1,76 +1,67 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
-import styled from "styled-components"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBars } from "@fortawesome/free-solid-svg-icons"
+import { Link } from 'gatsby';
+import React from 'react';
+import styled from 'styled-components';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
-const Header = ({ siteTitle }) => {
-  const navbarToggle = () => {
-    console.log("dont touch this")
-    const nav = document.getElementById("__navbar")
-    nav.classList.toggle("visible")
-  }
+import DrawerElement from './Drawer/Drawer';
+
+const Header = () => {
+  const handleClick = (id) => scrollTo(id);
   return (
     <HeaderWrapper>
       <header>
-        <div class="container-xm">
-          <div class="text-logo">
+        <div className="container-xm">
+          <div className="text-logo">
             <Link to="/">
-              <div class="logo-symbol">C</div>
-              <div class="logo-text">
-                Cyrus <span>Kiprop</span>
+              <div className="logo-symbol">C</div>
+              <div className="logo-text">
+                Cyrus
+                {' '}
+                <span>Kiprop</span>
               </div>
             </Link>
           </div>
           <a
-            onClick={navbarToggle}
-            class="menu-toggle mobile-visible d-block d-md-none"
+            className="menu-toggle mobile-visible"
           >
-            <FontAwesomeIcon icon={faBars} />
+            <DrawerElement />
           </a>
           <nav id="__navbar">
-            <ul class="nav-links">
+            <ul className="nav-links">
               <li>
-                <Link activeClassName="cta" to="/Blog">
-                  Blog
-                </Link>
+                <button onClick={() => handleClick('#contacts')} className="cta">
+                  Contacts
+                </button>
               </li>
               <li>
-                <Link activeClassName="cta" to="/articles">
-                  Articles
-                </Link>
+                <button onClick={() => handleClick('#projects')} className="cta">
+                  Projects
+                </button>
               </li>
               <li>
-                <Link activeClassName="cta" to="/about">
+                <button onClick={() => handleClick('#about')} activeClassName="active" className="cta">
                   About
-                </Link>
+                </button>
               </li>
               <li>
-                <Link activeClassName="cta" to="/">
+                <Link activeClassName="" to="/">
                   Home
                 </Link>
               </li>
             </ul>
           </nav>
-          <a class="hire-me cta" href="#">
+          <button onClick={() => handleClick('#contact')} className="hire-me cta">
             Hire Me
-          </a>
+          </button>
         </div>
       </header>
+
     </HeaderWrapper>
-  )
-}
+  );
+};
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+export default Header;
 
 const HeaderWrapper = styled.div`
   padding: 0px 50px;
@@ -79,16 +70,22 @@ const HeaderWrapper = styled.div`
   .visible {
     display: block !important;
   }
+  
+  @media (max-width: 1150px) {
+  padding: 1rem;
+    header > .container-xm {
+    }
+  }
 
   @media (max-width: 992px) {
     padding: 0;
     header > .container-xm {
-      background-color: #222;
       margin: 0;
       padding: 10px 20px;
       z-index: 999;
       border-radius: 0;
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+          background-color: #161b22;
     }
 
     .logo-symbol {
@@ -100,7 +97,7 @@ const HeaderWrapper = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     .logo-symbol {
       height: 35px !important;
       width: 35px !important;
@@ -111,6 +108,7 @@ const HeaderWrapper = styled.div`
     }
     .hire-me {
       display: none;
+      
     }
     nav {
       position: absolute;
@@ -147,6 +145,10 @@ const HeaderWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  
+  .cta  {
+  background-color: transparent;
   }
   .container-xm:nth-child(2) {
     justify-content: flex-end;
@@ -193,7 +195,7 @@ const HeaderWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 5rem;
+    padding: 0.5rem 2rem;
     border-radius: 40px;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.2);
     transition: all 0.6s ease-in-out;
@@ -207,16 +209,20 @@ const HeaderWrapper = styled.div`
   }
   .nav-links li {
     padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
   }
 
-  .nav-links li a {
+  .active, .nav-links li button {
     transition: 0.3s;
     position: relative;
+    outline: none;
+    border: none;
   }
-  .nav-links li a:hover {
+  .nav-links li button:hover {
     color: #ced6e0;
   }
-  .nav-links li a::before {
+ .active::before, .nav-links li button::before {
     content: "";
     position: absolute;
     top: -10px;
@@ -228,7 +234,11 @@ const HeaderWrapper = styled.div`
     box-shadow: 0 0 10px #fff;
     transition: 0.3s ease;
   }
-  .nav-links li a:hover::before {
+  
+  .active::before {
+    width: 100%;
+  }
+  .nav-links li button:hover::before {
     width: 100%;
   }
   .cta {
@@ -240,7 +250,6 @@ const HeaderWrapper = styled.div`
     color: #fff;
   }
   .cta:hover {
-    background-color: #fff;
     color: #5f27cd;
   }
   .logo {
@@ -281,4 +290,13 @@ const HeaderWrapper = styled.div`
   .logo-text > span {
     font-weight: 400;
   }
-`
+  
+  .hire-me {
+    border: 2px solid #fff;
+    outline: none;
+  }
+  
+  .hire-me:hover{
+    background-color: #fff;
+  }
+`;
