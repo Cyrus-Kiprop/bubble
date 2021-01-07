@@ -1,20 +1,19 @@
-import React from 'react'
-import styled from 'styled-components'
-import FooterSocial from "./FooterSocial";
-import Copyrights from "./Copyrights";
+import React from 'react';
+import styled from 'styled-components';
+import FooterSocial from './FooterSocial';
+import Copyrights from './Copyrights';
 
-export default function Footer(){
-    return (
-        <FooterWrapper>
-            <FooterSocial/>
-            <Copyrights/>
-        </FooterWrapper>
-    )
-
+export default function Footer() {
+  return (
+      <FooterWrapper>
+        <FooterSocial />
+        <Copyrights />
+      </FooterWrapper>
+  );
 }
 
 const FooterWrapper = styled.div`
-    background-color: #252525;
+    background-color: #21262D;
     border-color: #333333;
     display: flex;
     justify-content: space-between;
@@ -31,4 +30,5 @@ const FooterWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     }
-`
+   
+`;
