@@ -7,4 +7,8 @@ export default function Section({ children }) {
 
 const SectionWrapper = styled.section`
   padding: 52px 40px 60px;
+  
+  @media(max-width: 567px) {
+    padding: 52px 0px 60px;
+  }
 `
