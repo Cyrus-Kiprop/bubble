@@ -27,7 +27,7 @@ export default function FunFacts() {
             <Card>
               <div className="lm-info-block gray-default">
                 <FontAwesomeIcon icon={faKeyboard} size="2x" />
-                <h4>Typing Speed </h4>
+                <h4>Typing Speed(wpm) </h4>
                 <span className="lm-info-block-value">74</span>
                 <span className="lm-info-block-text"></span>
               </div>
