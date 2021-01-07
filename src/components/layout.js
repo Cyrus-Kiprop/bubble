@@ -1,14 +1,13 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import styled, { keyframes } from "styled-components"
-import { flipInY } from "react-animations"
-import { GlobalStyle } from "../theme/global-style"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
+import styled, { keyframes } from 'styled-components';
+import { flipInY } from 'react-animations';
 
-import Header from "./header"
-import HeroSection from "./HeroSection"
+import Header from './header';
 
-const bounceAnimation = keyframes`${flipInY}`
+
+const bounceAnimation = keyframes`${flipInY}`;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -19,7 +18,7 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
@@ -30,12 +29,12 @@ const Layout = ({ children }) => {
         </MainWrapper>
       </PageWrapper>
     </>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
 const PageWrapper = styled.div`
   background-color: #0479e6;
@@ -44,12 +43,13 @@ const PageWrapper = styled.div`
   overflow: auto;
   position: fixed;
   z-index: 2;
-`
+`;
 const MainWrapper = styled.div`
   transition: all 0.7s ease-in-out;
   border-radius: 40px;
   max-width: 94%;
-  background-color: #222222;
+  background-color: #0d1117;
+  background-color: #21262d;
   margin: 3% auto;
   position: relative;
   animation: 1s ${bounceAnimation};
@@ -58,7 +58,8 @@ const MainWrapper = styled.div`
     max-width: 100%;
     border-radius: 0%;
     margin-top: 0%;
+    margin-bottom: 0%;
   }
-`
+`;
 
-export default Layout
+export default Layout;
