@@ -241,6 +241,15 @@ body {
     line-height: ${({ theme }) => theme.lineHeight.relaxed};
     letter-spacing: ${({ theme }) => theme.letterSpacing.wide};
     background-color: ${({ theme }) => theme.colours.white};
+    scroll-behavior: smooth;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Poppins", Helvetica, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #f5f5f5;
 }
 
 body , p {
