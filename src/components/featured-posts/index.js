@@ -30,38 +30,37 @@ function FeaturedPosts() {
       <Row>
         {
               articles.map((article) => (
-                <div className="col-sm-12 col-md-4">
-                  <Posts
-                    data-sal="slide-up"
-                    data-sal-delay={article.delay}
-                    data-sal-easing="ease"
-                    data-sal-duration="800"
+                <div className="col-sm-12 col-md-4 ">
+                  <div
+                    className="h-100"
                   >
-                    <div
-                      className="mh-blog-item dark-bg wow fadeInUp"
-                    >
-                      <img src={article.imgSrc} alt="" className="img-fluid" />
-                      <div className="blog-inner">
-                        <h2><a href={article.articleLink} target="_blank">{article.slug}</a></h2>
-                        <div className="mh-blog-post-info">
-                          <ul>
-                            <li>
-                              <strong>Post On</strong>
-                              <a href="">{article.postedOn}</a>
-                            </li>
-                          </ul>
-                        </div>
-                        <p>
-                          {
+                    <Posts>
+                      <div
+                        className="mh-blog-item dark-bg wow fadeInUp"
+                      >
+                        <img src={article.imgSrc} alt="" className="img-fluid" />
+                        <div className="blog-inner">
+                          <h2><a href={article.articleLink} target="_blank">{article.slug}</a></h2>
+                          <div className="mh-blog-post-info">
+                            <ul>
+                              <li>
+                                <strong>Post On</strong>
+                                <a href="">{article.postedOn}</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <p>
+                            {
                         article.shortDescription
                     }
-                        </p>
-                        <div className="d-flex justify-content-start">
-                          <a href="https://medium.com/@cyrus_kiprop/cracking-the-css-display-inline-block-inline-block-none-visibility-hidden-property-851ad5ee926" target="_blank">Read More</a>
+                          </p>
+                          <div className="d-flex justify-content-start">
+                            <a href="https://medium.com/@cyrus_kiprop/cracking-the-css-display-inline-block-inline-block-none-visibility-hidden-property-851ad5ee926" target="_blank">Read More</a>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </Posts>
+                    </Posts>
+                  </div>
                 </div>
               ))
           }
@@ -75,12 +74,15 @@ export default FeaturedPosts;
 
 const Posts = styled.div`
 
+
+  margin-bottom: 2rem!important;
+
 .blog-inner {
     padding: 0px 20px 30px;;
 }
 
 border-color: #444;
-    background-color: #202026;
+    // background-color: #202026;
     border: 1px  solid #e5e5e5;
         border-color: #444;
     border-radius: 15px;
