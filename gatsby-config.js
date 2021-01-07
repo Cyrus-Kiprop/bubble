@@ -9,6 +9,8 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-scroll-reveal`,
+    `gatsby-plugin-antd`,
+    `gatsby-plugin-smoothscroll`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
