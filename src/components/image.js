@@ -1,8 +1,8 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
-import bgImage from "../images/bg-one.jpg"
+import bgImage from '../images/bg-one.jpg';
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
@@ -25,14 +25,14 @@ const Image = () => {
         }
       }
     }
-  `)
+  `);
 
   if (!data?.placeholderImage?.childImageSharp?.fluid) {
-    return <div>Picture not found</div>
+    return <div>Picture not found</div>;
   }
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
   // return <Img fluid={bgImage} />
-}
+};
 
-export default Image
+export default Image;

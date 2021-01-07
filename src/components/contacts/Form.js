@@ -4,15 +4,8 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 
-function Form({
-  handleChange, handleClick, state, inputRefs,
-}) {
-  const {
-    emailAddressRef,
-    messageRef,
-    fullNameRef,
-    subjectRef,
-  } = inputRefs;
+function Form({ handleChange, handleClick, state, inputRefs }) {
+  const { emailAddressRef, messageRef, fullNameRef, subjectRef } = inputRefs;
 
   const iconRef = useRef(null);
 
@@ -63,7 +56,11 @@ function Form({
               iconRef.current.style.display = 'none';
             }}
           />
-          <FontAwesomeIcon ref={iconRef} icon={faExclamationCircle} className="error-class" />
+          <FontAwesomeIcon
+            ref={iconRef}
+            icon={faExclamationCircle}
+            className="error-class"
+          />
         </div>
       </div>
 
@@ -81,7 +78,6 @@ function Form({
         />
         <FontAwesomeIcon icon={faExclamationCircle} className="error-class" />
       </div>
-
     </Wrapper>
   );
 }
@@ -110,7 +106,6 @@ const Wrapper = styled.form`
     display: flex;
     width: 100%;
     
-    
     .input-item {
       position: relative;
     }
@@ -121,7 +116,6 @@ const Wrapper = styled.form`
       right: .5rem;
       top: .7rem;
     }
-    
     
      .form-text-input {
         display: flex;
@@ -176,5 +170,4 @@ const Wrapper = styled.form`
      @media (max-width: 992px) {
         
      }
-     
 `;

@@ -12,13 +12,12 @@ export const messageStatus = (content) => {
 
 export const sendFeedback = (templateId, variables) => {
   const result = Promise.resolve(
-    emailjs
-      .send(
-        'lakefire',
-        'template_v3s8gqx',
-        variables,
-        'user_6d4qD668qOXeuT0IZqzRz',
-      ),
+    emailjs.send(
+      'lakefire',
+      'template_v3s8gqx',
+      variables,
+      'user_6d4qD668qOXeuT0IZqzRz'
+    )
   );
   return result;
 };

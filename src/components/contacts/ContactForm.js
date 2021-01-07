@@ -6,11 +6,9 @@ import { message } from 'antd';
 import PropTypes from 'prop-types';
 import SectionTitle from '../shared/SectionTitle';
 import Form from './Form';
-import AntDForms from "./AntDForms";
+import AntDForms from './AntDForms';
 
-ContactForm.propTypes = {
-
-};
+ContactForm.propTypes = {};
 
 function ContactForm(props) {
   const [state, setState] = useState({
@@ -20,30 +18,28 @@ function ContactForm(props) {
     message: '',
   });
   const [disable, setDisabled] = useState(false);
-  const [errors, setErrors] = useState({
-  });
+  const [errors, setErrors] = useState({});
 
   const fullNameRef = useRef(null);
   const emailAddressRef = useRef(null);
   const subjectRef = useRef(null);
   const messageRef = useRef(null);
 
-  // some validations
-
   const validate = () => {
-    const elements = [emailAddressRef.current,
+    const elements = [
+      emailAddressRef.current,
       fullNameRef.current,
       subjectRef.current,
       messageRef.current,
     ];
-    let tempError = { };
+    let tempError = {};
     for (let i = 0; i < elements.length; i += 1) {
       const property = elements[i].name;
       if (state[elements[i].name] === '') {
-        tempError = ({
+        tempError = {
           ...tempError,
           [property]: "Can't be blank",
-        });
+        };
       }
     }
     return tempError;
@@ -52,9 +48,12 @@ function ContactForm(props) {
 
   const handleClick = (event) => {
     event.preventDefault();
-    const elements = [...document.getElementsByTagName('input'), document.getElementsByTagName('textarea')[0]];
+    const elements = [
+      ...document.getElementsByTagName('input'),
+      document.getElementsByTagName('textarea')[0],
+    ];
     // eslint-disable-next-line no-param-reassign
-    elements.forEach((input) => input.style.borderColor = '#bfbfbf');
+    elements.forEach((input) => (input.style.borderColor = '#bfbfbf'));
     const { target } = event;
     target.style.borderColor = '#007ced';
   };
@@ -75,9 +74,7 @@ function ContactForm(props) {
     console.log('submitting');
     event.preventDefault();
     const templateId = 'lakefire';
-    if (isValid(
-      validate(),
-    )) {
+    if (isValid(validate())) {
       // eslint-disable-next-line no-use-before-define
       sendFeedback(templateId, {
         message_html: state.message,
@@ -93,7 +90,8 @@ function ContactForm(props) {
   };
 
   const popErrors = () => {
-    const elements = [emailAddressRef.current,
+    const elements = [
+      emailAddressRef.current,
       fullNameRef.current,
       subjectRef.current,
       messageRef.current,
@@ -103,10 +101,14 @@ function ContactForm(props) {
     elements.forEach((element) => {
       const { name, style } = element;
       if (err[name] !== '') {
-        if (name === 'emailAddress') emailAddressRef.current.style.border = '2px solid red';
-        if (name === 'fullName') fullNameRef.current.style.border = '2px solid red';
-        if (name === 'subject') subjectRef.current.style.border = '2px solid red';
-        if (name === 'message') messageRef.current.style.border = '2px solid red';
+        if (name === 'emailAddress')
+          emailAddressRef.current.style.border = '2px solid red';
+        if (name === 'fullName')
+          fullNameRef.current.style.border = '2px solid red';
+        if (name === 'subject')
+          subjectRef.current.style.border = '2px solid red';
+        if (name === 'message')
+          messageRef.current.style.border = '2px solid red';
       } else {
         style.bordercolor = 'green';
       }
@@ -126,7 +128,7 @@ function ContactForm(props) {
         'lakefire',
         'template_v3s8gqx',
         variables,
-        'user_6d4qD668qOXeuT0IZqzRz',
+        'user_6d4qD668qOXeuT0IZqzRz'
       )
       .then((res) => {
         setDisabled(false);
@@ -139,21 +141,7 @@ function ContactForm(props) {
     <div className="col-xs-12 col-sm-8">
       <FormWrapper>
         <SectionTitle title="How can I Help You?" />
-        {/* <Form */}
-        {/*  handleClick={handleClick} */}
-        {/*  handleChange={handleChange} */}
-        {/*  state={state} */}
-        {/*  inputRefs={ */}
-        {/*    { */}
-        {/*      emailAddressRef, */}
-        {/*      messageRef, */}
-        {/*      fullNameRef, */}
-        {/*      subjectRef, */}
-        {/*    } */}
-        {/* } */}
-        {/* /> */}
-
-        <AntDForms/>
+        <AntDForms />
       </FormWrapper>
     </div>
   );
@@ -162,26 +150,25 @@ function ContactForm(props) {
 export default ContactForm;
 
 const FormWrapper = styled.div`
-width: 100%;
+  width: 100%;
 
-    .submit-btn{
-        color: #fff;
-        background-color: #333;
-        box-shadow: 0 10px 10px -8px rgba(0,0,0,.78);
-        display: inline-block;
-        position: relative;
-        padding: .8em 2.1em;
-        margin-bottom: .75em;
-        font-size: 1em;
-        line-height: 1.2;
-        outline: 0;
-        border: 2px solid #007ced;
-        border-radius: 30px;
-        margin-top: 2rem;
-        transition: all .3s ease-in;
-    }
-    .submit-btn:hover {
-        background-color: #007ced;;
-    }
-    
+  .submit-btn {
+    color: #fff;
+    background-color: #333;
+    box-shadow: 0 10px 10px -8px rgba(0, 0, 0, 0.78);
+    display: inline-block;
+    position: relative;
+    padding: 0.8em 2.1em;
+    margin-bottom: 0.75em;
+    font-size: 1em;
+    line-height: 1.2;
+    outline: 0;
+    border: 2px solid #007ced;
+    border-radius: 30px;
+    margin-top: 2rem;
+    transition: all 0.3s ease-in;
+  }
+  .submit-btn:hover {
+    background-color: #007ced;
+  }
 `;

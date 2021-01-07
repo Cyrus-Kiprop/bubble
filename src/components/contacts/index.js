@@ -21,6 +21,6 @@ export default function Contact() {
 }
 
 const ContactWrapper = styled.div`
-margin-left: 15px;
-margin-right: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
 `;

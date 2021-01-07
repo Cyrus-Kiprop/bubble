@@ -52,7 +52,7 @@ export default function Testimonials() {
       <Row>
         <SectionTitle title="Testimonials" />
         <div className="col-12">
-          <Slides/>
+          <Slides />
         </div>
       </Row>
     </Section>

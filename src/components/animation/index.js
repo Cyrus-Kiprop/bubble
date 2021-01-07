@@ -16,9 +16,7 @@ Animate.defaultProps = {
 };
 
 function Animate(props) {
-  const {
-    animation, delay, animationFunction, duration,
-  } = props;
+  const { animation, delay, animationFunction, duration } = props;
   return (
     <div
       data-sal={animation}

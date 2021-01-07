@@ -6,7 +6,6 @@ import { flipInY } from 'react-animations';
 
 import Header from './header';
 
-
 const bounceAnimation = keyframes`${flipInY}`;
 
 const Layout = ({ children }) => {

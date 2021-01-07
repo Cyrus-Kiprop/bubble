@@ -15,31 +15,43 @@ const Header = () => {
             <Link to="/">
               <div className="logo-symbol">C</div>
               <div className="logo-text">
-                Cyrus
-                {' '}
-                <span>Kiprop</span>
+                Cyrus <span>Kiprop</span>
               </div>
             </Link>
           </div>
-          <a
-            className="menu-toggle mobile-visible"
-          >
+          {
+            // eslint-disable-next-line jsx-a11y/anchor-is-valid
+          }
+          <a className="menu-toggle mobile-visible">
             <DrawerElement />
           </a>
           <nav id="__navbar">
             <ul className="nav-links">
               <li>
-                <button onClick={() => handleClick('#contacts')} className="cta">
+                <button
+                  type="button"
+                  onClick={() => handleClick('#contacts')}
+                  className="cta"
+                >
                   Contacts
                 </button>
               </li>
               <li>
-                <button onClick={() => handleClick('#projects')} className="cta">
+                <button
+                  type="button"
+                  onClick={() => handleClick('#projects')}
+                  className="cta"
+                >
                   Projects
                 </button>
               </li>
               <li>
-                <button onClick={() => handleClick('#about')} activeClassName="active" className="cta">
+                <button
+                  type="button"
+                  onClick={() => handleClick('#about')}
+                  activeClassName="active"
+                  className="cta"
+                >
                   About
                 </button>
               </li>
@@ -50,16 +62,18 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-          <button onClick={() => handleClick('#contact')} className="hire-me cta">
+          <button
+            type="button"
+            onClick={() => handleClick('#contact')}
+            className="hire-me cta"
+          >
             Hire Me
           </button>
         </div>
       </header>
-
     </HeaderWrapper>
   );
 };
-
 
 export default Header;
 
@@ -70,9 +84,9 @@ const HeaderWrapper = styled.div`
   .visible {
     display: block !important;
   }
-  
+
   @media (max-width: 1150px) {
-  padding: 1rem;
+    padding: 1rem;
     header > .container-xm {
     }
   }
@@ -85,7 +99,7 @@ const HeaderWrapper = styled.div`
       z-index: 999;
       border-radius: 0;
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
-          background-color: #161b22;
+      background-color: #161b22;
     }
 
     .logo-symbol {
@@ -108,7 +122,6 @@ const HeaderWrapper = styled.div`
     }
     .hire-me {
       display: none;
-      
     }
     nav {
       position: absolute;
@@ -146,9 +159,9 @@ const HeaderWrapper = styled.div`
     justify-content: center;
     align-items: center;
   }
-  
-  .cta  {
-  background-color: transparent;
+
+  .cta {
+    background-color: transparent;
   }
   .container-xm:nth-child(2) {
     justify-content: flex-end;
@@ -213,7 +226,8 @@ const HeaderWrapper = styled.div`
     align-items: center;
   }
 
-  .active, .nav-links li button {
+  .active,
+  .nav-links li button {
     transition: 0.3s;
     position: relative;
     outline: none;
@@ -222,8 +236,9 @@ const HeaderWrapper = styled.div`
   .nav-links li button:hover {
     color: #ced6e0;
   }
- .active::before, .nav-links li button::before {
-    content: "";
+  .active::before,
+  .nav-links li button::before {
+    content: '';
     position: absolute;
     top: -10px;
     left: 0;
@@ -234,7 +249,7 @@ const HeaderWrapper = styled.div`
     box-shadow: 0 0 10px #fff;
     transition: 0.3s ease;
   }
-  
+
   .active::before {
     width: 100%;
   }
@@ -290,13 +305,13 @@ const HeaderWrapper = styled.div`
   .logo-text > span {
     font-weight: 400;
   }
-  
+
   .hire-me {
     border: 2px solid #fff;
     outline: none;
   }
-  
-  .hire-me:hover{
+
+  .hire-me:hover {
     background-color: #fff;
   }
 `;

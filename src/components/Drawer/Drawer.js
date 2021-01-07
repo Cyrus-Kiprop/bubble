@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Drawer, Button, Radio, Space,
-} from 'antd';
+import { Drawer, Button, Radio, Space } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
@@ -43,7 +41,6 @@ const DrawerElement = () => {
         <Button type="primary" onClick={showDrawer}>
           <FontAwesomeIcon icon={faBars} />
         </Button>
-
       </Space>
       <Drawer
         title="Cyrus Kiprop"
@@ -64,7 +61,11 @@ const DrawerElement = () => {
           <button onClick={() => handleClick('#projects')} className="cta">
             Projects
           </button>
-          <button onClick={() => handleClick('#about')} activeClassName="active" className="cta">
+          <button
+            onClick={() => handleClick('#about')}
+            activeClassName="active"
+            className="cta"
+          >
             About
           </button>
           <Link activeClassName="" to="/">
@@ -79,47 +80,44 @@ const DrawerElement = () => {
 export default DrawerElement;
 
 const Wrapper = styled.div`
-    .ant-btn {
-    display:none;
-    }  
- 
-    
+  .ant-btn {
+    display: none;
+  }
+
   @media (max-width: 900px) {
     .ant-btn {
-    display:flex;
-    font-size: 20px;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    outline: none;
-    border: 2px solid  #444;
-    border-radius: 5px;
+      display: flex;
+      font-size: 20px;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      outline: none;
+      border: 2px solid #444;
+      border-radius: 5px;
     }
   }
 `;
 
 const ContentDialog = styled.div`
-display: flex;
-flex-direction: column-reverse;
-justify-content: center
-background: #161b22;
-
-
- 
- button.cta, a {
-  padding: 1.25rem 1rem;
-  color: white;
-  background: transparent;
-  border: 0;
-  border-top: 1px solid #30363d;
   display: flex;
+  flex-direction: column-reverse;
   justify-content: center;
-  text-decoration: none;
-  outline: none;
- }
- 
- button.cta:hover, a:hover {
-  
-  background-color: #20252B;
- }
+
+  button.cta,
+  a {
+    padding: 1.25rem 1rem;
+    color: white;
+    background: transparent;
+    border: 0;
+    border-top: 1px solid #30363d;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    outline: none;
+  }
+
+  button.cta:hover,
+  a:hover {
+    background-color: #20252b;
+  }
 `;

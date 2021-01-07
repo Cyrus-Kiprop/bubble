@@ -1,18 +1,18 @@
-import React, { useState } from "react"
-import styled from "styled-components"
-import Arrow from "./Arrow.js"
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import Arrow from './Arrow';
 
-import SlideContent from "./SlideContent.js"
+import SlideContent from './SlideContent';
 
 export default function Slides({ children }) {
-  const getWidth = () => window.innerWidth
+  const getWidth = () => window.innerWidth;
 
   const [state] = useState({
     translate: 0,
     transition: 0.45,
-  })
+  });
 
-  const { transition, translate } = state
+  const { transition, translate } = state;
 
   return (
     <SliderWrapper>
@@ -26,10 +26,10 @@ export default function Slides({ children }) {
 
       <Arrow />
     </SliderWrapper>
-  )
+  );
 }
 
 const SliderWrapper = styled.div`
   position: relative;
   margin: 0 auto;
-`
+`;

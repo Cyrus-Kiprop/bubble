@@ -1,18 +1,16 @@
-import React from "react"
-import Layout from "./src/components/layout"
-import { GlobalStyle, theme } from "./src/theme/global-style"
-import { ThemeProvider } from "styled-components"
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import Layout from './src/components/layout';
+import { GlobalStyle, theme } from './src/theme/global-style';
 
-import "bootstrap/dist/css/bootstrap.min.css"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-export const WrapRootElement = ({ element }) => {
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Layout>{element}</Layout>
-    </ThemeProvider>
-  )
-}
+export const WrapRootElement = ({ element }) => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <Layout>{element}</Layout>
+  </ThemeProvider>
+);
 
 // export const onInitialClientRender = () => {
 //   console.log("this is the setimoute functionworking")

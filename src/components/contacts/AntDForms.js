@@ -1,98 +1,98 @@
-import React, { useEffect, useState } from "react"
-import styled from "styled-components"
-import PropTypes from "prop-types"
-import { Form, Input } from "antd"
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { Form, Input } from 'antd';
 
-import { sendFeedback, messageStatus } from "./email"
+import { sendFeedback, messageStatus } from './email';
 
-AntDForms.propTypes = {}
+AntDForms.propTypes = {};
 
 function AntDForms(props) {
   const [content, setContent] = useState({
-    emailAddress: "",
-    subject: "",
-    message: "",
-    fullName: "",
-  })
+    emailAddress: '',
+    subject: '',
+    message: '',
+    fullName: '',
+  });
 
-  const [sendStatus, setStatus] = useState("Send message")
-  const [disabled, setDisable] = useState(false)
+  const [sendStatus, setStatus] = useState('Send message');
+  const [disabled, setDisable] = useState(false);
 
   const [errors, setErrors] = useState({
-    fullName: ["", "Name is required."],
-    subject: ["", "Subject is required."],
-    emailAddress: ["", "Email is required."],
-    message: ["", "Please, leave me a message."],
-  })
+    fullName: ['', 'Name is required.'],
+    subject: ['', 'Subject is required.'],
+    emailAddress: ['', 'Email is required.'],
+    message: ['', 'Please, leave me a message.'],
+  });
 
-  const handleInputClickErrors = event => {
-    event.preventDefault()
-    const { name } = event.target
+  const handleInputClickErrors = (event) => {
+    event.preventDefault();
+    const { name } = event.target;
     setErrors({
       ...errors,
-      [name]: [content[name] ? "success" : "error", errors[name][1]],
-    })
-  }
+      [name]: [content[name] ? 'success' : 'error', errors[name][1]],
+    });
+  };
 
-  const handleChange = event => {
-    event.preventDefault()
-    const { name, value } = event.target
+  const handleChange = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
 
     setErrors({
       ...errors,
-      [name]: [content[name] ? "success" : "error", errors[name][1]],
-    })
+      [name]: [content[name] ? 'success' : 'error', errors[name][1]],
+    });
 
     setContent({
       ...content,
       [name]: value,
-    })
-  }
+    });
+  };
 
-  const handleSubmit = event => {
-    event.preventDefault()
-    setDisable(true)
-    const templateId = "lakefire"
-    const isValid = Object.values(content).every(field => field.length > 0)
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setDisable(true);
+    const templateId = 'lakefire';
+    const isValid = Object.values(content).every((field) => field.length > 0);
 
     if (isValid) {
-      setStatus("Sending...")
+      setStatus('Sending...');
       sendFeedback(templateId, {
         message_html: content.message,
         subject: content.subject,
         from_name: content.fullName,
-        reply_to: "cyruskiprop254@gmail.com",
+        reply_to: 'cyruskiprop254@gmail.com',
         from_email: content.emailAddress,
-        to_name: "Kiprop",
+        to_name: 'Kiprop',
       })
-        .then(res => {
+        .then((res) => {
           if (res.status === 200) {
-            messageStatus("Message sent!")
-            setStatus("Sent!")
+            messageStatus('Message sent!');
+            setStatus('Sent!');
             setTimeout(() => {
-              setDisable(false)
-              setStatus("Send message")
-            }, 1000)
+              setDisable(false);
+              setStatus('Send message');
+            }, 1000);
           }
         })
-        .catch(() => messageStatus("Error sending message!"))
+        .catch(() => messageStatus('Error sending message!'));
     } else {
       // check which fields are missing
       for (const property in content) {
         if (content.hasOwnProperty(property)) {
-          if (content[property] === "") {
+          if (content[property] === '') {
             setErrors({
               ...errors,
-              [property]: ["error", errors[property][1]],
-            })
+              [property]: ['error', errors[property][1]],
+            });
           }
         }
       }
-      messageStatus("Please check your input fields")
-      setDisable(false)
-      setStatus("Send message")
+      messageStatus('Please check your input fields');
+      setDisable(false);
+      setStatus('Send message');
     }
-  }
+  };
 
   return (
     <FormWrap>
@@ -103,7 +103,7 @@ function AntDForms(props) {
               hasFeedback
               validateStatus={errors.fullName[0]}
               onClick={handleInputClickErrors}
-              help={errors.fullName[0] === "error" ? errors.fullName[1] : ""}
+              help={errors.fullName[0] === 'error' ? errors.fullName[1] : ''}
             >
               <Input
                 placeholder="Full Name"
@@ -120,7 +120,7 @@ function AntDForms(props) {
               onClick={handleInputClickErrors}
               name="emailAddress"
               help={
-                errors.emailAddress[0] === "error" ? errors.emailAddress[1] : ""
+                errors.emailAddress[0] === 'error' ? errors.emailAddress[1] : ''
               }
             >
               <Input
@@ -136,7 +136,7 @@ function AntDForms(props) {
               hasFeedback
               validateStatus={errors.subject[0]}
               onClick={handleInputClickErrors}
-              help={errors.subject[0] === "error" ? errors.subject[1] : ""}
+              help={errors.subject[0] === 'error' ? errors.subject[1] : ''}
             >
               <Input
                 value={content.subject}
@@ -153,7 +153,7 @@ function AntDForms(props) {
               hasFeedback
               validateStatus={errors.message[0]}
               onClick={handleInputClickErrors}
-              help={errors.message[0] === "error" ? errors.message[1] : ""}
+              help={errors.message[0] === 'error' ? errors.message[1] : ''}
             >
               <Input.TextArea
                 value={content.message}
@@ -179,10 +179,10 @@ function AntDForms(props) {
         </div>
       </Form>
     </FormWrap>
-  )
+  );
 }
 
-export default AntDForms
+export default AntDForms;
 
 const FormWrap = styled.div`
   .ant-form {
@@ -248,4 +248,4 @@ const FormWrap = styled.div`
   .submit-btn:hover {
     background-color: #007ced;
   }
-`
+`;

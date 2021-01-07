@@ -6,7 +6,6 @@ export default function SlideContent() {
   return (
     <SliderWrapper id="slides-container">
       <Row>
-
         <div className=" col-12 col-md-6 testimonial-item testimonial-testimonials-5fdc48502728d">
           <div className="testimonial-content">
             <div className="testimonial-picture">
@@ -17,8 +16,8 @@ export default function SlideContent() {
             </div>
             <div className="testimonial-text">
               <p>
-                The ability of Kip to explain to you a subject can only compare to
-                his willingness to share his knowledge and to show you how he
+                The ability of Kip to explain to you a subject can only compare
+                to his willingness to share his knowledge and to show you how he
                 truly cares about you feeling the “pair” in pair programming. I
                 had a wonderful time working with him and I hope someday we can
                 work together again.
@@ -106,9 +105,7 @@ export default function SlideContent() {
           </div>
         </div>
 
-        <div
-          className=" col-12 col-md-6 testimonial-item testimonial-testimonials-5fdc48502728d"
-        >
+        <div className=" col-12 col-md-6 testimonial-item testimonial-testimonials-5fdc48502728d">
           <div className="testimonial-content">
             <div className="testimonial-picture">
               <img
@@ -120,9 +117,9 @@ export default function SlideContent() {
               <p>
                 Cyrus Kiprop has exceeded what is expected of a great Microverse
                 alumni, collaborator, and developer. I am glad to say he excels
-                in what he does and uses his knowledge specially in Rails, React, JS and
-                Node. Without a doubt he is an great professional! and can work
-                with anyone...
+                in what he does and uses his knowledge specially in Rails,
+                React, JS and Node. Without a doubt he is an great professional!
+                and can work with anyone...
               </p>
             </div>
 
@@ -213,7 +210,7 @@ const SliderWrapper = styled.div`
 
   .testimonial-content {
     background-color: #282828;
-    background-color: #161B22;
+    background-color: #161b22;
     border-color: #444;
     position: relative;
     padding: 30px 20px 20px 60px;

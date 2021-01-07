@@ -13,11 +13,9 @@ import growthpad from '../../images/growthpad.png';
 import dechrist from '../../images/dechrist.png';
 import phaser from '../../images/phaser.png';
 
-Index.propTypes = {
+Index.propTypes = {};
 
-};
-
-function Index(props) {
+function Index() {
   const projects = [
     {
       projImage: weatherImg,
@@ -56,29 +54,32 @@ function Index(props) {
       category: 'Spa and Wellness',
       link: 'https://dechristiesruby.com/',
     },
-
   ];
   return (
     <Section>
       <RecentWrapper>
-        <CenterTitle title="Recent Works" id={'projects'} />
+        <CenterTitle title="Recent Works" id="projects" />
         <Row>
-          {
-                       projects && projects.map((work) => (
-                         <div className="col-lg-4 col-md-6 col-sm-6 uiux">
-                           <div className="work_single_item" >
-                             <img className="img-fluid" src={work.projImage} alt="" />
-                             <div className="work_info">
-                               <h6 title="Better Days Hotel">{work.name}</h6>
-                               <p>{work.category}</p>
-                               <a className="link" href={work.link} target="_blank" rel="noopener">
-                                 <FontAwesomeIcon icon={faLink} />
-                               </a>
-                             </div>
-                           </div>
-                         </div>
-                       ))
-                    }
+          {projects &&
+            projects.map((work) => (
+              <div className="col-lg-4 col-md-6 col-sm-6 uiux">
+                <div className="work_single_item">
+                  <img className="img-fluid" src={work.projImage} alt="" />
+                  <div className="work_info">
+                    <h6 title="Better Days Hotel">{work.name}</h6>
+                    <p>{work.category}</p>
+                    <a
+                      className="link"
+                      href={work.link}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FontAwesomeIcon icon={faLink} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
         </Row>
       </RecentWrapper>
     </Section>
@@ -88,52 +89,49 @@ function Index(props) {
 export default Index;
 
 const RecentWrapper = styled.div`
-position: relative;
-// background-color: #111111;
-padding-top: 2rem;
-padding-bottom: 1rem;
-  // background-color: #0d1117;
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
 
-.work_info {
+  .work_info {
     background-color: #fff;
     padding: 20px;
     padding-left: 40px;
     margin-left: 22px;
     text-align: left;
     position: relative;
-}
+  }
 
-.work_info h6 {
+  .work_info h6 {
     font-weight: 600;
     font-size: 17px;
     color: #000;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-}
+  }
 
-
-.work_info > p {
+  .work_info > p {
     font-size: 15px;
     margin-top: 5px;
     font-weight: 600;
     position: relative;
     padding-left: 30px;
     color: #000;
-}
+  }
 
-.work_info > p::after {
+  .work_info > p::after {
     position: absolute;
-    content: "";
+    content: '';
     height: 1px;
     width: 20px;
     top: 49%;
     left: 0;
     background-color: #000;
-    transition: .3s;
-}
+    transition: 0.3s;
+  }
 
-.work_info  > a {
+  .work_info > a {
     font-size: 24px;
     color: #fff;
     position: absolute;
@@ -146,34 +144,34 @@ padding-bottom: 1rem;
     top: 50%;
     margin-top: -22px;
     z-index: 1;
-}
-.work_info a::after {
-        position: absolute;
-        content: "";
-        height: 100%;
-        width: 0;
-        background-color: #fff;
-        top: 0;
-        left: 0;
-        transition: .3s;
-    }
-    
-    .work_info > a:hover::after {
-        width: 100%;
-        z-index: -1;
-    }
-    
-    .work_info > a > svg {
-        font-size: 16px;
-    }
-    
-    .work_info a:hover  svg {
-        color: black;
-    }
-    
-    .work_single_item {
-        margin-bottom: 30px;
-        text-align: center;
-        overflow: hidden;
-    }
+  }
+  .work_info a::after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 0;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    transition: 0.3s;
+  }
+
+  .work_info > a:hover::after {
+    width: 100%;
+    z-index: -1;
+  }
+
+  .work_info > a > svg {
+    font-size: 16px;
+  }
+
+  .work_info a:hover svg {
+    color: black;
+  }
+
+  .work_single_item {
+    margin-bottom: 30px;
+    text-align: center;
+    overflow: hidden;
+  }
 `;

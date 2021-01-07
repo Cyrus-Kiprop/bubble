@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default function Arrow({ direction, handleClick }) {
+export default function Arrow() {
   return (
     <ArrowWrapper>
       <div className="owl-dot arrow-active">

@@ -1,9 +1,9 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react';
+import PropTypes from 'prop-types';
 // import LoaderSVG from "./img/loader.svg"
 
 export default function HTML(props) {
-  console.log(props.body)
+  console.log(props.body);
   return (
     <html {...props.htmlAttributes}>
       <head>
@@ -18,14 +18,14 @@ export default function HTML(props) {
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
         <div
-          key={`loader`}
+          key="loader"
           id="___loader"
           style={{
-            alignItems: "center",
-            backgroundColor: "#fff",
-            display: "flex",
-            justifyContent: "center",
-            position: "absolute",
+            alignItems: 'center',
+            backgroundColor: '#fff',
+            display: 'flex',
+            justifyContent: 'center',
+            position: 'absolute',
             left: 0,
             top: 0,
             right: 0,
@@ -42,14 +42,14 @@ export default function HTML(props) {
           />
         </div>
         <div
-          key={`body`}
+          key="body"
           id="___gatsby"
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
       </body>
     </html>
-  )
+  );
 }
 
 HTML.propTypes = {
@@ -59,4 +59,4 @@ HTML.propTypes = {
   preBodyComponents: PropTypes.array,
   body: PropTypes.string,
   postBodyComponents: PropTypes.array,
-}
+};

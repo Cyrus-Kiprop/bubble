@@ -43,23 +43,27 @@ export default function HeroSection() {
                 <h1>Hi I'm Cyrus Kiprop</h1>
                 <p>
                   <span style={{ fontSize: '16px', fontWeight: 500 }}>
-                    I am full-stack web developer currently working as a freelancer, based in Nairobi, Kenya. I Recently graduated from Microverse. Currently working from home.
+                    I am full-stack web developer currently working as a
+                    freelancer, based in Nairobi, Kenya. I Recently graduated
+                    from Microverse. Currently working from home.
                     <br />
                     <br />
-                    My stack is Ruby, Ruby on Rails, Node, Express, JavaScript(ES6+), Gatsby, React/Redux, SQL and NO-SQL DBs.
+                    My stack is Ruby, Ruby on Rails, Node, Express,
+                    JavaScript(ES6+), Gatsby, React/Redux, SQL and NO-SQL DBs.
                   </span>
                   <br />
                   <br />
-                  I’m a second career dev, that reskilled from a academic writing role into software development.
+                  I’m a second career dev, that reskilled from a academic
+                  writing role into software development.
                   <br />
                   <br />
                   <span style={{ fontSize: '16px', fontWeight: 600 }}>
                     When not coding or working on a project!,
                     <br />
                   </span>
-                  I love hiking and hanging out with friends. I am a pro at Ping Pong and
-                  I enjoy feeding baby elephants on Tuesdays and Sundays.
-
+                  I love hiking and hanging out with friends. I am a pro at Ping
+                  Pong and I enjoy feeding baby elephants on Tuesdays and
+                  Sundays.
                 </p>
                 <div className="home-buttons">
                   <a
