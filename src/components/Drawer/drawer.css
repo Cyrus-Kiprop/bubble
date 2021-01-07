@@ -1,0 +1,25 @@
+.ant-drawer-header {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 0;
+}
+
+.ant-drawer-title {
+  color: #fff;
+}
+
+.ant-drawer-body {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  color: #fff;
+  height: calc(100vh - 55px);
+}
+
+.ant-drawer-body > button {
+  border: none;
+  outline: none;
+  margin: 0.5rem 0;
+  padding: 1.25rem 1rem;
+  color: gray;
+  background: transparent;
+}

@@ -1,34 +1,20 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react';
+import styled from 'styled-components';
 
-export default function Arrow({ direction, handleClick }) {
-  const handleSlide = () => {
-    const element = document.getElementById("samuel")
-    const rect = element.getBoundingClientRect()
-    console.log(rect)
-    const slidesContainer = document.getElementById("slides-container")
-    //   transform: translate3d(-2.7rem, 0, 1rem);
-    // element.style.transform = `translate3d(-634px, 0, 0 )`
-    for (let i = 0; i <= rect.x - 93; i++) {
-      setTimeout(() => {
-        slidesContainer.scrollLeft = i
-      }, 200)
-    }
-  }
-
+export default function Arrow() {
   return (
     <ArrowWrapper>
-      <div class="owl-dot arrow-active">
-        <span></span>
+      <div className="owl-dot arrow-active">
+        <span />
       </div>
-      <div onClick={handleSlide} class="owl-dot">
-        <span></span>
+      <div className="owl-dot">
+        <span />
       </div>
-      <div class="owl-dot">
-        <span></span>
+      <div className="owl-dot">
+        <span />
       </div>
     </ArrowWrapper>
-  )
+  );
 }
 
 const ArrowWrapper = styled.div`
@@ -61,4 +47,4 @@ const ArrowWrapper = styled.div`
     transform: scale(1.1);
     background-color: #007ced;
   }
-`
+`;

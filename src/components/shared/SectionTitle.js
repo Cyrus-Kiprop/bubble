@@ -1,18 +1,16 @@
-import React from "react"
-import styled from "styled-components"
-import Animate from "../animation";
-
-
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 export default function SectionTitle({ title }) {
   return (
-
     <div
-        data-sal="slide-up"
-        data-sal-delay="300"
-        data-sal-easing="ease"
-        data-sal-duration="800"
-        className=" col-xs-12 col-sm-12 ">
+      data-sal="slide-up"
+      data-sal-delay="300"
+      data-sal-easing="ease"
+      data-sal-duration="800"
+      className=" col-xs-12 col-sm-12 "
+    >
       <TitleWrapper>
         <div
           id=""
@@ -25,8 +23,12 @@ export default function SectionTitle({ title }) {
         </div>
       </TitleWrapper>
     </div>
-  )
+  );
 }
+
+SectionTitle.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
 const TitleWrapper = styled.div`
   .block-title h2 {
@@ -43,7 +45,7 @@ const TitleWrapper = styled.div`
   .block-title h2::before {
     display: block;
     position: absolute;
-    content: "";
+    content: '';
     width: 100%;
     height: 2px;
     bottom: 0;
@@ -52,10 +54,10 @@ const TitleWrapper = styled.div`
   .block-title h2::after {
     display: block;
     position: absolute;
-    content: "";
+    content: '';
     width: 30px;
     background-color: #007ced;
     height: 2px;
     bottom: 0;
   }
-`
+`;

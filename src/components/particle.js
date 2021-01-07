@@ -1,6 +1,6 @@
-import React from "react"
-import Particles from "react-particles-js"
-import styled from "styled-components"
+import React from 'react';
+import Particles from 'react-particles-js';
+import styled from 'styled-components';
 
 export default function Particle({ children }) {
   return (
@@ -16,19 +16,19 @@ export default function Particle({ children }) {
               },
             },
             color: {
-              value: "#fff",
+              value: '#fff',
             },
             shape: {
-              type: "circle",
+              type: 'circle',
               stroke: {
                 width: 0,
-                color: "#000000",
+                color: '#000000',
               },
               polygon: {
                 nb_sides: 5,
               },
               image: {
-                src: "img/github.svg",
+                src: 'img/github.svg',
                 width: 100,
                 height: 100,
               },
@@ -56,17 +56,17 @@ export default function Particle({ children }) {
             line_linked: {
               enable: false,
               distance: 500,
-              color: "#ffffff",
+              color: '#ffffff',
               opacity: 0.4,
               width: 2,
             },
             move: {
               enable: true,
               speed: 1,
-              direction: "bottom",
+              direction: 'bottom',
               random: false,
               straight: false,
-              out_mode: "out",
+              out_mode: 'out',
               bounce: false,
               attract: {
                 enable: false,
@@ -76,15 +76,15 @@ export default function Particle({ children }) {
             },
           },
           interactivity: {
-            detect_on: "canvas",
+            detect_on: 'canvas',
             events: {
               onhover: {
                 enable: true,
-                mode: "bubble",
+                mode: 'bubble',
               },
               onclick: {
                 enable: true,
-                mode: "repulse",
+                mode: 'repulse',
               },
               resize: true,
             },
@@ -120,9 +120,9 @@ export default function Particle({ children }) {
         {children}
       </Particles>
     </ParticleWrapper>
-  )
+  );
 }
 
 const ParticleWrapper = styled.div`
   overflow: hidden;
-`
+`;
