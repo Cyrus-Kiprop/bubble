@@ -42,6 +42,10 @@ const PageWrapper = styled.div`
   overflow: auto;
   position: fixed;
   z-index: 2;
+
+  @media (max-width: 992px) {
+    background-color: #21262d;
+  }
 `;
 const MainWrapper = styled.div`
   transition: all 0.7s ease-in-out;
@@ -52,7 +56,6 @@ const MainWrapper = styled.div`
   margin: 3% auto;
   position: relative;
   animation: 1s ${bounceAnimation};
-
   @media (max-width: 992px) {
     max-width: 100%;
     border-radius: 0%;

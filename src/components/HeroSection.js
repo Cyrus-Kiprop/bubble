@@ -98,7 +98,6 @@ const HeroWrapper = styled.div`
       margin-left: 0% !important;
       margin-right: 0% !important;
       margin-top: 0% !important;
-      /* padding: 0 0 !important; */
       padding: 40px !important;
     }
     .welcome-content {
@@ -158,7 +157,7 @@ const HeroWrapper = styled.div`
 
   .hero-content {
     margin: 5% 10%;
-    padding: 0 70px;
+    /* padding: 0 70px; */
   }
 
   .home-photo {

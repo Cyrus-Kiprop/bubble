@@ -5,6 +5,7 @@ import { GlobalStyle, theme } from './src/theme/global-style';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// eslint-disable-next-line import/prefer-default-export
 export const WrapRootElement = ({ element }) => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
