@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Default Starter',
-    description: 'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
+    description:
+      'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
     author: '@gatsbyjs',
   },
   plugins: [
@@ -11,6 +12,12 @@ module.exports = {
     'gatsby-plugin-scroll-reveal',
     'gatsby-plugin-antd',
     'gatsby-plugin-smoothscroll',
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'G-ZXP1D2RDL3',
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -36,11 +43,11 @@ module.exports = {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [
-          'fira code\:300,400,500,600.700',
-          'poppins\:200, 300, 400, 500, 600, 700',
-          'cambay\:400,700',
-          'arvo\:400,700',
-          'ubuntu mono\:400,700',
+          'fira code:300,400,500,600.700',
+          'poppins:200, 300, 400, 500, 600, 700',
+          'cambay:400,700',
+          'arvo:400,700',
+          'ubuntu mono:400,700',
         ],
         display: 'swap',
       },
