@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: 'Cyrus Kiprop',
@@ -14,7 +18,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'G-ZXP1D2RDL3',
+        trackingId: process.env.TRACKING_ID,
       },
     },
     {
