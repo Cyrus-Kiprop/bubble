@@ -16,9 +16,17 @@ module.exports = {
     'gatsby-plugin-scroll-reveal',
     'gatsby-plugin-smoothscroll',
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: 'gatsby-plugin-google-gtag',
       options: {
-        trackingId: process.env.TRACKING_ID,
+        trackingIds: [process.env.TRACKING_ID],
+        gtagConfig: {
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: false,
+          respectDNT: true,
+        },
       },
     },
     {
@@ -39,7 +47,7 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/images/favicon.png', // This path is relative to the root of the site.
+        icon: 'src/images/favicon.png',
       },
     },
     {
@@ -55,8 +63,5 @@ module.exports = {
         display: 'swap',
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 };
